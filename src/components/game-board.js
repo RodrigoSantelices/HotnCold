@@ -29,6 +29,7 @@ export default class GameBoard extends React.Component {
   }
   makeGuess(event){
     event.preventDefault();
+    
     let newGuess= document.getElementById('answer').value;
     this.state.guesses.push(newGuess);
     let distance = Math.abs(newGuess - this.state.guessNum);
@@ -57,6 +58,7 @@ export default class GameBoard extends React.Component {
       feedback: feedback,
       
     })
+    event.target.reset();
 
   }
 
